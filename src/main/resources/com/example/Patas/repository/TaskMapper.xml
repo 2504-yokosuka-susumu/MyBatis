@@ -17,6 +17,22 @@
         SELECT * FROM tasks
     </select>
 
+    <insert id="save">
+        INSERT INTO tasks (
+            content,
+            status,
+            limit_date,
+            created_date,
+            updated_date
+        ) VALUES (
+            #{content},
+            #{status},
+            #{limitDate},
+            now(),
+            now()
+        )
+    </insert>
+
     <delete id="deleteById">
         DELETE FROM tasks WHERE id = #{id}
     </delete>

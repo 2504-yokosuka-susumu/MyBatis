@@ -14,5 +14,6 @@ public interface TaskMapper {
     //投稿削除
     void deleteById(Integer id);
 
-
+    //投稿登録
+    void save(Task saveTask);
 }
