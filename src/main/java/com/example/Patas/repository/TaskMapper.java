@@ -21,6 +21,10 @@ public interface TaskMapper {
     //投稿登録
     void save(Task saveTask);
 
+    //投稿編集
+    void edit(Task saveTask);
+
+    //ステータス変更
     void update(@Param("id") Integer id, @Param("status") Integer status,
               @Param("updatedDate") Date updatedDate);
 }

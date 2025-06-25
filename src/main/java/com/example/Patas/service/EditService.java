@@ -50,7 +50,7 @@ public class EditService {
 
     public void saveTask(TaskForm reqTask) {
         Task saveTask = setReportEntity(reqTask);
-        taskRepository.save(saveTask);
+        taskMapper.edit(saveTask);
     }
 
     /*

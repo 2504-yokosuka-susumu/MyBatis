@@ -37,6 +37,17 @@
         )
     </insert>
 
+    <insert id="edit">
+        UPDATE tasks SET
+            id = #{id},
+            content = #{content},
+            status = #{status},
+            limit_date = #{limitDate},
+            updated_date = now()
+        WHERE
+            id = #{id}
+    </insert>
+
     <update id="update">
         UPDATE tasks SET
             status = #{status},
