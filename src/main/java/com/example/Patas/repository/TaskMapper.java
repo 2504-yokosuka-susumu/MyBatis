@@ -13,6 +13,8 @@ public interface TaskMapper {
     //全件取得
     List<Task> findAll();
 
+    Task findById(Integer id);
+
     //投稿削除
     void deleteById(Integer id);
 

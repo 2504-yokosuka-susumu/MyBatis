@@ -17,6 +17,10 @@
         SELECT * FROM tasks
     </select>
 
+    <select id="findById" resultType="com.example.Patas.repository.entity.Task">
+        SELECT * FROM tasks WHERE id = #{id}
+    </select>
+
     <insert id="save">
         INSERT INTO tasks (
             content,
