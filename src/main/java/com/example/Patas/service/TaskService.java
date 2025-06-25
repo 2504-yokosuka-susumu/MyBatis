@@ -1,6 +1,7 @@
 package com.example.Patas.service;
 
 import com.example.Patas.controller.form.TaskForm;
+import com.example.Patas.repository.TaskMapper;
 import com.example.Patas.repository.TaskRepository;
 import com.example.Patas.repository.entity.Task;
 import io.micrometer.common.util.StringUtils;
@@ -18,6 +19,9 @@ import java.util.List;
 public class TaskService {
     @Autowired
     TaskRepository taskRepository;
+
+    @Autowired
+    TaskMapper taskMapper;
 
     //１．タスク情報取得処理
     public List<TaskForm> findAllTask(){

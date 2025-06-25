@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.Patas.repository.TaskMapper">
+
+<!--    <select id="findAll" resultType="com.example.Patas.repository.entity.Task">-->
+<!--        SELECT * FORM tasks-->
+<!--    </select>-->
+
+    <delete id="deleteById">
+        DELETE FROM tasks WHERE id = #{id}
+    </delete>
+
+</mapper>
