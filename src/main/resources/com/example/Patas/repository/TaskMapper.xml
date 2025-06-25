@@ -3,9 +3,19 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.Patas.repository.TaskMapper">
 
-<!--    <select id="findAll" resultType="com.example.Patas.repository.entity.Task">-->
-<!--        SELECT * FORM tasks-->
-<!--    </select>-->
+<!--    &lt;!&ndash; マッピング定義(ユーザー) &ndash;&gt;-->
+<!--    <resultMap type="com.example.Patas.repository.entity.Task" id="task">-->
+<!--        <id column="id" property="id"/>-->
+<!--        <result column="content" property="content"/>-->
+<!--        <result column="status" property="status"/>-->
+<!--        <result column="limit_date" property="limitDate" jdbcType="Timestamp" />-->
+<!--        <result column="created_date" property="createdDate" jdbcType="Timestamp"/>-->
+<!--        <result column="updated_date" property="updatedDate" jdbcType="Timestamp"/>-->
+<!--    </resultMap>-->
+
+    <select id="findAll" resultType="com.example.Patas.repository.entity.Task">
+        SELECT * FROM tasks
+    </select>
 
     <delete id="deleteById">
         DELETE FROM tasks WHERE id = #{id}

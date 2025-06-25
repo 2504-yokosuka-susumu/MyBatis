@@ -25,7 +25,7 @@ public class TaskService {
 
     //１．タスク情報取得処理
     public List<TaskForm> findAllTask(){
-        List<Task> results = taskRepository.findAll();
+        List<Task> results = taskMapper.findAll();
         List<TaskForm> tasks = setTaskForm(results);
         return tasks;
 
@@ -66,7 +66,7 @@ public class TaskService {
             task.setId(result.getId());
             task.setContent(result.getContent());
             task.setStatus(result.getStatus());
-            task.setLimitDate((Timestamp) result.getLimitDate());
+            task.setLimitDate(result.getLimitDate());
             tasks.add(task);
         }
         return tasks;
