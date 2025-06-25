@@ -33,6 +33,14 @@
         )
     </insert>
 
+    <update id="update">
+        UPDATE tasks SET
+            status = #{status},
+            updated_date = now()
+        WHERE
+            id = #{id}
+    </update>
+
     <delete id="deleteById">
         DELETE FROM tasks WHERE id = #{id}
     </delete>

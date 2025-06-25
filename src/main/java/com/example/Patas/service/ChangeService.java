@@ -1,6 +1,7 @@
 package com.example.Patas.service;
 
 import com.example.Patas.controller.form.TaskForm;
+import com.example.Patas.repository.TaskMapper;
 import com.example.Patas.repository.TaskRepository;
 import com.example.Patas.repository.entity.Task;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,15 +11,19 @@ import java.util.Date;
 
 @Service
 public class ChangeService {
+//    @Autowired
+//    TaskRepository taskRepository;
+
     @Autowired
-    TaskRepository taskRepository;
+    TaskMapper taskMapper;
 
     /*
      * レコード変更
      */
     public void saveTask(TaskForm reqTask) {
         Task saveTask = setTaskEntity(reqTask);
-        taskRepository.updateStatusAndUpdatedDateById(saveTask.getId(), saveTask.getStatus(), new Date());
+        //taskRepository.updateStatusAndUpdatedDateById(saveTask.getId(), saveTask.getStatus(), new Date());
+        taskMapper.update(saveTask.getId(), saveTask.getStatus(), new Date());
     }
 
     /*
